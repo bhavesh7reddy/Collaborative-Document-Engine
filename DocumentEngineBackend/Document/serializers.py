@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from .models import Document, DocumentAccessLog
 
 User = get_user_model()
 
@@ -22,3 +23,21 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+
+
+class DocumentSerializer(serializers.ModelSerializer):
+    main_author_name = serializers.ReadOnlyField(source='main_author.username')
+
+    class Meta:
+        model = Document
+        fields = ('id', 'title', 'main_author', 'main_author_name', 'content_json', 'created_at', 'updated_at')
+        read_only_fields = ('id', 'main_author', 'created_at', 'updated_at')
+
+
+class DocumentAccessLogSerializer(serializers.ModelSerializer):
+    document_title = serializers.ReadOnlyField(source='document.title')
+    document_id = serializers.ReadOnlyField(source='document.id')
+
+    class Meta:
+        model = DocumentAccessLog
+        fields = ('document_id', 'document_title', 'last_accessed_at')
