@@ -1,0 +1,38 @@
+# Environment & Secrets 
+.env
+.env.local
+*.env
+*.pem
+
+# Python & Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+*.db
+media/
+static/
+venv/
+env/
+.venv/
+
+# React & Node
+node_modules/
+dist/
+build/
+.npm
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker & OS
+.docker/
+.DS_Store
+Thumbs.db
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
