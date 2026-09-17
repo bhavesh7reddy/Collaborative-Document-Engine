@@ -18,7 +18,7 @@ A full-stack, real-time collaborative document editing platform built with Djang
 
 | Domain | Technologies |
 | :--- | :--- |
-| **Frontend** | React, JavaScript, HTML5/CSS3 |
+| **Frontend** | React, TypeScript, HTML5/CSS3 |
 | **Backend** | Python 3, Django, Django REST Framework (DRF) |
 | **Real-Time** | Django Channels, WebSockets, Daphne (ASGI) |
 | **Database & Cache** | PostgreSQL, Redis |
